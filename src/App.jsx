@@ -37,17 +37,17 @@ function App() {
         <h2>Projects</h2>
         <div className="project">
           <h3>E-Commerce Platform</h3>
-          <p><strong>Tech Stack:</strong> React, PHP and PostgreSQL</p>
+          <p><strong>:</strong> React, PHP and SQL</p>
           <p>A fully functional e-commerce platform featuring user authentication, dynamic product filtering, and a secure checkout process.</p>
         </div>
         <div className="project">
           <h3>Weather Dashboard</h3>
-          <p><strong>Tech Stack:</strong> React and  API</p>
+          <p><strong>:</strong> React and  API</p>
           <p>A responsive weather dashboard that displays real-time weather data and forecasts for multiple locations.</p>
         </div>
         <div className="project">
           <h3>Portfolio Showcase</h3>
-          <p><strong>Tech Stack:</strong> React and CSS</p>
+          <p><strong>:</strong> React and CSS</p>
           <p>A sleek and modern portfolio website designed to highlight my skills, projects, and contact details with an emphasis on responsive design.</p>
         </div>
       </section>
@@ -56,8 +56,8 @@ function App() {
         <h2>Contact</h2>
         <p>Let’s connect! Feel free to reach out through email or connect with me on LinkedIn.</p>
         <div className="contact-links">
-          <a href="mailto:jane.doe@example.com" className="contact-link">Email Me</a>
-          <a href="https://www.linkedin.com/in/jane-doe" target="_blank" rel="noopener noreferrer" className="contact-link">LinkedIn</a>
+          <a href="mailto:abule443@gmail.com" className="contact-link">Email Me</a>
+          <a href="https://www.facebook.com/zildjiandesu/" target="_blank" rel="noopener noreferrer" className="contact-link">LinkedIn</a>
         </div>
       </section>
     </div>
