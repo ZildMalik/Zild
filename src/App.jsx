@@ -1,47 +1,67 @@
-import { useState } from "react"
+import React, { useState } from 'react';
+import './App.css'; 
 
-export default function Zild() {
-  const [isHovered, setIsHovered] = useState(false)
+function App() {
+  const [activeSection, setActiveSection] = useState('');
 
-  const skills = ["Dribbling, Shooting and Scoring"]
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(sectionId);
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 flex items-center justify-center p-4">
-      <div className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg p-8 rounded-2xl shadow-2xl max-w-md w-full text-center transform transition-all duration-500 ease-in-out hover:scale-105">
-        <div className="relative w-32 h-32 mx-auto mb-6 rounded-full border-4 border-white shadow-lg overflow-hidden">
-          <img
-            src= "/Zild.jpg"
-            alt="Zild John Lloyd M. Abule"
-            className="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110"
-          />
+    <div className="App">
+      <header className="header1">
+        <h1>Welcome to</h1>
+        <h2>My Portfolio</h2>
+      </header>
+
+      <header className="header">
+        <p>Zild John Lloyd M. Abule</p>
+        <div className="nav-buttons">
+          <button onClick={() => scrollToSection('about')}>About</button>
+          <button onClick={() => scrollToSection('projects')}>Projects</button>
+          <button onClick={() => scrollToSection('contact')}>Contact</button>
         </div>
-        <h1 className="text-3xl font-bold text-white mb-2">Zild John Lloyd M. Abule</h1>
-        <p className="text-xl text-purple-200 mb-4">BSIT 4-B</p>
+      </header>
 
-        <p className="text-white mb-6">I love Playing Basketball </p>
+      <section id="about" className="section about">
+        <h2>About Me</h2>
+        <p>I am a creative and results-driven software engineer with expertise in full-stack development. I have a passion for crafting seamless user experiences and delivering high-quality, scalable solutions. In my free time, I enjoy contributing to open-source projects and staying up-to-date with emerging technologies.</p>
+      </section>
 
-        <div className="mb-6">
-          <h2 className="text-xl font-semibold text-white mb-3">Skills</h2>
-          <div className="flex flex-wrap justify-center gap-2">
-            {skills.map((skill, index) => (
-              <span key={index} className="bg-white bg-opacity-30 text-white px-3 py-1 rounded-full text-sm">
-                {skill}
-              </span>
-            ))}
-          </div>
+      <section id="projects" className="section projects">
+        <h2>Projects</h2>
+        <div className="project">
+          <h3>E-Commerce Platform</h3>
+          <p><strong>Tech Stack:</strong> React, PHP and PostgreSQL</p>
+          <p>A fully functional e-commerce platform featuring user authentication, dynamic product filtering, and a secure checkout process.</p>
         </div>
+        <div className="project">
+          <h3>Weather Dashboard</h3>
+          <p><strong>Tech Stack:</strong> React and  API</p>
+          <p>A responsive weather dashboard that displays real-time weather data and forecasts for multiple locations.</p>
+        </div>
+        <div className="project">
+          <h3>Portfolio Showcase</h3>
+          <p><strong>Tech Stack:</strong> React and CSS</p>
+          <p>A sleek and modern portfolio website designed to highlight my skills, projects, and contact details with an emphasis on responsive design.</p>
+        </div>
+      </section>
 
-        <button
-          className="bg-white text-purple-600 font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:bg-purple-600 hover:text-white hover:scale-105 active:scale-95"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          {isHovered ? "Let's Connect!" : "Get Started"}
-        </button>
-
-    
-      </div>
+      <section id="contact" className="section contact">
+        <h2>Contact</h2>
+        <p>Let’s connect! Feel free to reach out through email or connect with me on LinkedIn.</p>
+        <div className="contact-links">
+          <a href="mailto:jane.doe@example.com" className="contact-link">Email Me</a>
+          <a href="https://www.linkedin.com/in/jane-doe" target="_blank" rel="noopener noreferrer" className="contact-link">LinkedIn</a>
+        </div>
+      </section>
     </div>
-  )
+  );
 }
 
+export default App;
